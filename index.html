@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+            <!-- #region CSS-->
+            <link rel="stylesheet" type="text/css" href="css/scratchit.css">
+            <!-- #endregion CSS-->
+
+            <!-- #region JAVASCRIPT-->
+            <script src="js/jquery.js"></script>
+            <!-- #endregion JAVASCRIPT -->
+
+            <!-- #region PLUGINS-->
+            <script src="js/scratchit.js"></script>
+            <!-- #endregion PLUGINS -->
+    </head>
+    <body>
+        <div class="scratchit">
+            <img src="img/Dirty_sneaker.jpg" width="1000" height="416">
+            <img src="img/Clean_sneaker.jpg" width="1000" height="416">
+            <canvas width="1000" height="416"></canvas>
+        </div>
+        <script>
+            $(document).ready(
+            function() {
+                var $scratchit = $('.scratchit').scratchIt();
+            });
+       
+           </script>
+    </body>
+</html>
