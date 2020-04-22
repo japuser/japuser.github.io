@@ -21,13 +21,6 @@
    -ms-user-select: none;
    user-select: none;
 }
-
-.scratchit img, .scratchit canvas  {
-	width:90%!important;
-	width:100%!important;
-	max-width: 1000px;
-	max-height: 416px;
-}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	/* Styles */
