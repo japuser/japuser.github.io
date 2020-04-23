@@ -65,7 +65,6 @@
             this.offsetxy  = this.canvas.offset();
             
             this.canvas.on({
-              'mousedown.scratchit' : $.proxy(this.onDown, this),
               'touchstart.scratchit' : $.proxy(this.onDown, this),
               'mousemove.scratchit' : $.proxy(this.onMove, this),
               'mouseup.scratchit' : $.proxy(this.onUp, this)
