@@ -27,6 +27,7 @@
 
         this._defaults = defaults;
         this._name = 'scratchIt';
+        this.percentageCleaned = 0;
 
         this.isScratching === undefined && this.init();
         
@@ -64,7 +65,7 @@
             this.offsetxy  = this.canvas.offset();
             
             this.canvas.on({
-              'mousedown.scratchit' : $.proxy(this.onDown, this),
+              'mouseover.scratchit' : $.proxy(this.onDown, this),
               'mousemove.scratchit' : $.proxy(this.onMove, this),
               'mouseup.scratchit' : $.proxy(this.onUp, this)
             });
@@ -121,7 +122,15 @@
   
               }
             }
-            console.log((clearedPixels / this.totalPixels) * 100);
+            this.percentageCleaned = (clearedPixels / this.totalPixels) * 100;
+            console.log(percentageCleaned);
+            if(this.percentageCleaned > 50)
+            {
+              //Show promotion code
+
+              //Save cleaned on cookies
+
+            }
             this.lastEvent = now;
           }
           
