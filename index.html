@@ -15,16 +15,55 @@
     </head>
     <body>
         <div class="scratchit">
-            <img src="img/Dirty_sneaker.jpg" width="1000" height="416">
+            <img src="img/Dirty_sneaker.jpg" class="dirty" width="1000" height="416">
             <img src="img/Clean_sneaker.jpg" width="1000" height="416">
             <canvas width="1000" height="416" ></canvas>
         </div>
         <script>
             $(document).ready(
             function() {
-                var $scratchit = $('.scratchit').scratchIt();
+                //Validate if cookie is set 
+                if(!alreadyCleaning())
+                {
+                    var $scratchit = $('.scratchit').scratchIt();
+                    //set cookie
+                    setCookie();
+                }
+                else
+                {
+                    $("img.dirty").remove();
+                }
             });
-       
+            function setCookie()
+            {
+                var midnight = new Date();
+                midnight.setHours(23,59,59,0);
+                document.cookie = "cleaned=1;expires=" + midnight + ";path=/";
+            }
+            function alreadyCleaning()
+            {
+                var cleaned = getCookie("cleaned");
+                if(cleaned != "")
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
            </script>
     </body>
 </html>
