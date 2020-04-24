@@ -17,9 +17,10 @@
         <div class="scratchit">
             <img src="img/Dirty_sneaker.jpg" class="dirty" width="1000" height="416">
             <img src="img/Clean_sneaker.jpg" width="1000" height="416">
-            <canvas width="1000" height="416" ></canvas>
+            <canvas id="scratchCanvas" width="1000" height="416" ></canvas>
         </div>
         <script>
+            var canvas = document.getElementById("scratchCanvas");
             $(document).ready(
             function() {
                 //Validate if cookie is set 
@@ -65,6 +66,26 @@
                 }
                 return "";
             }
+
+
+            //Preventing scrolling when touching the canvas
+            // Prevent scrolling when touching the canvas
+            document.body.addEventListener("touchstart", function (e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+            }, false);
+            document.body.addEventListener("touchend", function (e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+            }, false);
+            document.body.addEventListener("touchmove", function (e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+            }, false);
+
            </script>
     </body>
 </html>
