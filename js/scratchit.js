@@ -102,7 +102,7 @@
           context.stroke();
           this.percentScratched();
         },
-        onUp: function () {
+        onUp: function (e) {
           if (e.target == this.canvas) {
             e.preventDefault();
           }
