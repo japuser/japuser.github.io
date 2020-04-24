@@ -41,23 +41,6 @@
           
             this.canvas = this.$element.find('canvas');
             this.context = this.canvas[0].getContext('2d');
-
-            // Prevent scrolling when touching the canvas
-            document.body.addEventListener("touchstart", function (e) {
-              if (e.target == this.canvas) {
-                  e.preventDefault();
-              }
-              }, false);
-              document.body.addEventListener("touchend", function (e) {
-              if (e.target == this.canvas) {
-                  e.preventDefault();
-              }
-              }, false);
-              document.body.addEventListener("touchmove", function (e) {
-              if (e.target == this.canvas) {
-                  e.preventDefault();
-              }
-              }, false);
             
             var context = this.context; 
             this.context.fillStyle = this.options.color;
@@ -92,6 +75,9 @@
         },
         
         onDown: function(e) {
+          if (e.target == this.canvas) {
+            e.preventDefault();
+          }
           var context = this.context;
           x = e.pageX - this.offsetxy.left;
           y = e.pageY - this.offsetxy.top;
@@ -105,6 +91,9 @@
 
         },
         onMove: function(e) {
+          if (e.target == this.canvas) {
+            e.preventDefault();
+          }
           var context = this.context;
           if (!this.isScratching) {return;}
           x = e.pageX - this.offsetxy.left;
@@ -114,6 +103,9 @@
           this.percentScratched();
         },
         onUp: function () {
+          if (e.target == this.canvas) {
+            e.preventDefault();
+          }
           this.percentScratched();
           this.isScratching = false;
           
