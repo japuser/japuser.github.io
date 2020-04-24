@@ -41,6 +41,23 @@
           
             this.canvas = this.$element.find('canvas');
             this.context = this.canvas[0].getContext('2d');
+
+            // Prevent scrolling when touching the canvas
+            document.body.addEventListener("touchstart", function (e) {
+              if (e.target == this.canvas) {
+                  e.preventDefault();
+              }
+              }, false);
+              document.body.addEventListener("touchend", function (e) {
+              if (e.target == this.canvas) {
+                  e.preventDefault();
+              }
+              }, false);
+              document.body.addEventListener("touchmove", function (e) {
+              if (e.target == this.canvas) {
+                  e.preventDefault();
+              }
+              }, false);
             
             var context = this.context; 
             this.context.fillStyle = this.options.color;
