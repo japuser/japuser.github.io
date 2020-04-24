@@ -55,8 +55,6 @@
               scratchedImage.src = this.$element.find('img').attr("src");
               
             } 
-            
-
             this.context.strokeStyle = "#FFF";
             this.context.lineJoin = "round";
             this.context.lineCap = "round";
