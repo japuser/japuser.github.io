@@ -75,7 +75,7 @@
         },
         
         onDown: function(e) {
-          if (e.target == this.canvas) {
+          if (e.type == "touchstart") {
             e.preventDefault();
           }
           var context = this.context;
@@ -91,7 +91,7 @@
 
         },
         onMove: function(e) {
-          if (e.target == this.canvas) {
+          if (e.type == "touchmove") {
             e.preventDefault();
           }
           var context = this.context;
@@ -103,7 +103,7 @@
           this.percentScratched();
         },
         onUp: function (e) {
-          if (e.target == this.canvas) {
+          if (e.type == "touchend") {
             e.preventDefault();
           }
           this.percentScratched();
