@@ -7,6 +7,7 @@
  */
 ; (function ($, window, document, undefined) {
   var x, y;
+  var percentageCleaned = 0;
   var defaults = {
     color: "#C4B178",
     goal: 100,
@@ -27,7 +28,6 @@
 
         this._defaults = defaults;
         this._name = 'scratchIt';
-        this.percentageCleaned = 0;
 
         this.isScratching === undefined && this.init();
         
