@@ -7,7 +7,7 @@
  */
 ; (function ($, window, document, undefined) {
   var x, y;
-  var percentageCleaned = 0;
+  var percentageCleaned;
   var defaults = {
     color: "#C4B178",
     goal: 100,
@@ -143,7 +143,7 @@
               }
             }
             this.percentageCleaned = (clearedPixels / this.totalPixels) * 100;
-            console.log(percentageCleaned);
+            console.log(this.percentageCleaned);
             if(this.percentageCleaned > 50)
             {
               //Show promotion code
