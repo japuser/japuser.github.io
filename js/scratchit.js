@@ -75,9 +75,6 @@
         },
         
         onDown: function(e) {
-          if (e.type == "touchstart") {
-            e.preventDefault();
-          }
           var context = this.context;
           x = e.pageX - this.offsetxy.left;
           y = e.pageY - this.offsetxy.top;
@@ -91,9 +88,7 @@
 
         },
         onMove: function(e) {
-          if (e.type == "touchmove") {
-            e.preventDefault();
-          }
+          
           var context = this.context;
           if (!this.isScratching) {return;}
           x = e.pageX - this.offsetxy.left;
@@ -103,9 +98,7 @@
           this.percentScratched();
         },
         onUp: function (e) {
-          if (e.type == "touchend") {
-            e.preventDefault();
-          }
+          
           this.percentScratched();
           this.isScratching = false;
           
