@@ -1,20 +1,20 @@
-.scratchit {
+.wipeit {
 	position:relative;
 }
-.scratchit > canvas {
+.wipeit > canvas {
 	border: 1px solid black;
 	cursor: url(wipe.png), pointer !important;
 }
 
-.scratchit > canvas,
-.scratchit > img + img {
+.wipeit > canvas,
+.wipeit > img + img {
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: url('wipe.png'), pointer !important;
 }
-.scratchit,
-.scratchit * {
+.wipeit,
+.wipeit * {
 	-moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
