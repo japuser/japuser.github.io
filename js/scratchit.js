@@ -127,7 +127,6 @@
             }
             this.percentageCleaned = (clearedPixels / this.totalPixels) * 100;
             console.log(this.percentageCleaned);
-            alert(this.percentageCleaned);
             if(this.percentageCleaned > 50)
             {
               //Show promotion code
