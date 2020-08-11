@@ -64,11 +64,11 @@
             
             this.canvas.on({
               'mousedown.scratchit' : $.proxy(this.onDown, this),
-              //'touchstart.scratchit' : $.proxy(this.onDown, this),
+              'touchstart.scratchit' : $.proxy(this.onDown, this),
               'mousemove.scratchit' : $.proxy(this.onMove, this),
-              //'touchmove.scratchit' : $.proxy(this.onMove, this),
+              'touchmove.scratchit' : $.proxy(this.onMove, this),
               'mouseup.scratchit' : $.proxy(this.onUp, this),
-              //'touchend.scratchit' : $.proxy(this.onUp, this)
+              'touchend.scratchit' : $.proxy(this.onUp, this)
             });
         },
         
