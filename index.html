@@ -84,7 +84,7 @@
                     $("#cleaningBoard").removeAttr("class");
                     $("#cleaningBoard").addClass("travelit");
                     
-                    var $newCanvas = $('<canvas/>',{'id':'travelCanvas'});
+                    var $newCanvas = $('<canvas/>',{'id':'travelCanvas', 'class' : 'scratchit'});
                     $newCanvas.attr("width", "1000");
                     $newCanvas.attr("height", "416");
                     $("#cleaningBoard").append($newCanvas);
@@ -96,7 +96,7 @@
                     $("#cleaningBoard").removeAttr("class");
                     $("#cleaningBoard").addClass("eraserit");
                     
-                    var $newCanvas = $('<canvas/>',{'id':'eraserCanvas'});
+                    var $newCanvas = $('<canvas/>',{'id':'eraserCanvas' , 'class' : 'scratchit'});
                     $newCanvas.attr("width", "1000");
                     $newCanvas.attr("height", "416");
                     
@@ -109,7 +109,7 @@
                     $("#cleaningBoard").removeAttr("class");
                     $("#cleaningBoard").addClass("wipeit");
 
-                    var $newCanvas = $('<canvas/>',{'id':'wipeCanvas'});
+                    var $newCanvas = $('<canvas/>',{'id':'wipeCanvas' , 'class' : 'scratchit'});
                     $newCanvas.attr("width", "1000");
                     $newCanvas.attr("height", "416");
                     $("#cleaningBoard").append($newCanvas);
