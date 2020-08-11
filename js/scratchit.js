@@ -63,16 +63,17 @@
             this.offsetxy  = this.canvas.offset();
             
             this.canvas.on({
-              'mousedown' : $.proxy(this.onDown, this),
-              'touchstart' : $.proxy(this.onDown, this),
-              'mousemove' : $.proxy(this.onMove, this),
-              'touchmove' : $.proxy(this.onMove, this),
-              'mouseup' : $.proxy(this.onUp, this),
-              'touchend' : $.proxy(this.onUp, this)
+              'mousedown.scratchit' : $.proxy(this.onDown, this),
+              'touchstart.scratchit' : $.proxy(this.onDown, this),
+              'mousemove.scratchit' : $.proxy(this.onMove, this),
+              'touchmove.scratchit' : $.proxy(this.onMove, this),
+              'mouseup.scratchit' : $.proxy(this.onUp, this),
+              'touchend.scratchit' : $.proxy(this.onUp, this)
             });
         },
         
         onDown: function(e) {
+          e.preventDefault();
           var context = this.context;
           x = e.pageX - this.offsetxy.left;
           y = e.pageY - this.offsetxy.top;
@@ -86,7 +87,7 @@
 
         },
         onMove: function(e) {
-          
+          e.preventDefault();
           var context = this.context;
           if (!this.isScratching) {return;}
           x = e.pageX - this.offsetxy.left;
@@ -96,7 +97,7 @@
           this.percentScratched();
         },
         onUp: function (e) {
-          
+          e.preventDefault();
           this.percentScratched();
           this.isScratching = false;
           
