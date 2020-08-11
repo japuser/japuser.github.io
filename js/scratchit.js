@@ -73,7 +73,7 @@
         },
         
         onDown: function(e) {
-          e.preventDefault();
+          
           var context = this.context;
           x = e.pageX - this.offsetxy.left;
           y = e.pageY - this.offsetxy.top;
@@ -87,7 +87,7 @@
 
         },
         onMove: function(e) {
-          e.preventDefault();
+          
           var context = this.context;
           if (!this.isScratching) {return;}
           x = e.pageX - this.offsetxy.left;
