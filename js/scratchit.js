@@ -98,7 +98,7 @@
         onUp: function (e) {
           
           this.percentScratched();
-          this.isScratching = false;
+          this.isScratching = true;
           
         },
         
