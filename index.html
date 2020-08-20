@@ -17,38 +17,16 @@
             <!-- #endregion PLUGINS -->
     </head>
     <body>
-        <p>UPDATE: 14h:46</p>
-        <div class="scratch_container">
-            <div class="scratch_viewport">
-              <!-- result picture -->
-              <canvas id="js-scratch-canvas"></canvas>
+        <div class="container" id="js-container">
+            <canvas class="canvas" id="js-canvas" width="300" height="300"></canvas>
+            <div class="inner" style="visibility: hidden;">
+              <h1>見つかったわ・。・ｖ</h1>
             </div>
-        </div>
-
-        <script>
-            
-            $(document).ready(
-            function() {
-                var scratch = new Scratch({
-                    canvasId: 'js-scratch-canvas',
-                    imageBackground: 'Clean_sneaker.jpg',
-                    pictureOver: 'DirtySneaker.png',
-                    cursor: {
-                        png: 'wipe.png',
-                        cur: 'piece.cur',
-                        x: '20',
-                        y: '17'
-                    },
-                    radius: 20,
-                    nPoints: 100,
-                    percent: 50,
-                    callback: function () {
-                    alert('I am Callback.');
-                    },
-                    pointSize: { x: 3, y: 3}
-                });
-               
-            });
-           </script>
+          </div>
+          <div class="debugContainer">
+            <button type="button" onclick="location.href='//s.codepen.io/loxis/debug/YWwqBJ'">Reload</button>
+            <div class="percentage">0%</div>
+          </div>
+        
     </body>
 </html>
