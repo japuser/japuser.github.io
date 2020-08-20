@@ -5,7 +5,7 @@
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
       canvas       = document.getElementById('js-canvas'),
-      canvasWidth  = canvas.300,
+      canvasWidth  = canvas.width,
       canvasHeight = canvas.height,
       ctx          = canvas.getContext('2d'),
       image        = new Image(),
