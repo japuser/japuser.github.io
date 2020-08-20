@@ -2,8 +2,8 @@
 .container {
     border: 3px solid #000;
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 1000px;
+    height: 416px;
     margin: 0 auto;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -15,6 +15,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    cursor: url(travel.png), pointer !important;
   }
   .container .inner {
     display: table;
@@ -22,7 +23,7 @@
     height: 100%;
   }
   .container .inner h1 {
-    background: url("https://pbs.twimg.com/profile_images/581025665727655936/9CnwZZ6j.jpg") no-repeat;
+    background: url("../img/Clean_sneaker.jpg") no-repeat;
     background-size: cover;
     color: #fff;
     font-size: 23px;
@@ -31,7 +32,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  
   .debugContainer {
     text-align: center;
   }
