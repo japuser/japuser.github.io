@@ -2,9 +2,10 @@
     <head>
 
             <!-- #region CSS-->
+            <link rel="stylesheet" type="text/css" href="css/default.css">
             <link rel="stylesheet" type="text/css" href="css/wipeit.css">
-            <link rel="stylesheet" type="text/css" href="css/eraserit.css">
-            <link rel="stylesheet" type="text/css" href="css/travelit.css">
+            <!-- <link rel="stylesheet" type="text/css" href="css/eraserit.css">
+            <link rel="stylesheet" type="text/css" href="css/travelit.css"> -->
             <!-- #endregion CSS-->
 
             <!-- #region JAVASCRIPT-->
@@ -12,114 +13,42 @@
             <!-- #endregion JAVASCRIPT -->
 
             <!-- #region PLUGINS-->
-            <script src="js/scratchit.js"></script>
+            <script src="js/scratchCard.js"></script>
             <!-- #endregion PLUGINS -->
     </head>
     <body>
         <p>UPDATE: 14h:46</p>
-        <div class="chooseCleaning">
-            <button onclick="changeTo('travel')">Travel Kit</button>
-            <button onclick="changeTo('eraser')">Eraser</button>
-            <button onclick="changeTo('wipe')">WIPE</button>
+        <div class="scratch_container">
+            <div class="scratch_viewport">
+              <!-- result picture -->
+              <canvas id="js-scratch-canvas"></canvas>
+            </div>
         </div>
-        <div id="cleaningBoard">
-            <img src="img/DirtySneaker.png" class="dirty" width="1000" height="416">
-            <img src="img/Clean_sneaker.jpg" width="1000" height="416">
-        </div>
+
         <script>
-            var canvas = document.getElementById("wipeCanvas");
+            
             $(document).ready(
             function() {
-
-                changeTo("eraser");
-                //Validate if cookie is set 
-                // if(true) //!alreadyCleaning()
-                // {
-                //     var $wipeit = $('.wipeit').scratchIt();
-                    
-                //     //set cookie
-                //     //setCookie();
-                // }
-                // else
-                // {
-                //     $("img.dirty").remove();
-                // }
+                var scratch = new Scratch({
+                    canvasId: 'js-scratch-canvas',
+                    imageBackground: 'Clean_sneaker.jpg',
+                    pictureOver: 'DirtySneaker.png',
+                    cursor: {
+                        png: 'wipe.png',
+                        cur: 'piece.cur',
+                        x: '20',
+                        y: '17'
+                    },
+                    radius: 20,
+                    nPoints: 100,
+                    percent: 50,
+                    callback: function () {
+                    alert('I am Callback.');
+                    },
+                    pointSize: { x: 3, y: 3}
+                });
+               
             });
-            function setCookie()
-            {
-                var midnight = new Date();
-                midnight.setHours(23,59,59,0);
-                document.cookie = "cleaned=1;expires=" + midnight + ";path=/";
-            }
-            function alreadyCleaning()
-            {
-                var cleaned = getCookie("cleaned");
-                if(cleaned != "")
-                {
-                    return true;
-                }
-                return false;
-            }
-
-            function getCookie(cname) {
-                var name = cname + "=";
-                var ca = document.cookie.split(';');
-                for(var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
-
-            function changeTo(name)
-            {
-                $("#cleaningBoard > canvas").remove();
-                var $board;
-                if(name === "travel")
-                {
-                    $("#cleaningBoard").removeAttr("class");
-                    $("#cleaningBoard").addClass("travelit");
-                    
-                    var $newCanvas = $('<canvas/>',{'id':'travelCanvas', 'class' : 'scratchit'});
-                    $newCanvas.attr("width", "1000");
-                    $newCanvas.attr("height", "416");
-                    $("#cleaningBoard").append($newCanvas);
-
-                    $board = $('.travelit').scratchIt();
-                }
-                else if (name === "eraser")
-                {
-                    $("#cleaningBoard").removeAttr("class");
-                    $("#cleaningBoard").addClass("eraserit");
-                    
-                    var $newCanvas = $('<canvas/>',{'id':'eraserCanvas' , 'class' : 'scratchit'});
-                    $newCanvas.attr("width", "1000");
-                    $newCanvas.attr("height", "416");
-                    
-                    $("#cleaningBoard").append($newCanvas);
-
-                    $board = $('.eraserit').scratchIt();
-                }
-                else if ( name === "wipe" )
-                {
-                    $("#cleaningBoard").removeAttr("class");
-                    $("#cleaningBoard").addClass("wipeit");
-
-                    var $newCanvas = $('<canvas/>',{'id':'wipeCanvas' , 'class' : 'scratchit'});
-                    $newCanvas.attr("width", "1000");
-                    $newCanvas.attr("height", "416");
-                    $("#cleaningBoard").append($newCanvas);
-                    
-
-                    $board = $('.wipeit').scratchIt();
-                }
-
-            }
            </script>
     </body>
 </html>
